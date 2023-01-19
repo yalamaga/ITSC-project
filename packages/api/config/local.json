@@ -3,10 +3,10 @@
     "port": 4000
   },
   "database": {
-    "username": "itsc",
-    "password": "Ygeethu@234",
-    "database": "yalamaga",
-    "host": "itscappdev07.cech.uc.edu",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "ocat",
+    "host": "localhost",
     "port": 5432,
     "dialect": "postgres",
     "pool": {
