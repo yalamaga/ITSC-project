@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useTable } from 'react-table';
+import { useMemo, useTable } from 'react-table';
 import { AssessmentService } from '../../services/AssessmentService';
 export const AssessmentList = () => {
   const [ assessments, setAssessments ] = useState([]);
@@ -9,15 +9,43 @@ export const AssessmentList = () => {
     const fetchAssessments = async () => {
       setAssessments(await AssessmentService.getList(`/client/services/AssessmentService.js`));
     };
-    fetchAssessments();
-  }, []);
+    fetchAssessments(assessments);
+  }, [ assessments ]);
+  const columns = useMemo(
+    () => [
+      {
+        Header: `Cat Assessment`,
+        columns: [
+          {
+            Header: `ID`,
+            accessor: `assessment.id`,
+          },
+          {
+            Header: `Cat Name`,
+            accessor: `assessment.name`,
+          },
+          {
+            Header: `Cat Date of birth`,
+            accessor: `assessment.date`,
+          },
+          {
+            Header: `Score`,
+            accessor: `assessment.points`,
+          },
+          {
+            Header: `Risk level`,
+            accessor: `assessment.riskLevel`,
+          },
+        ],
+      },
+    ]
+  );
 
   return (
     <div>
-      {/*
-          List goes here
-          Please use the library react-table https://www.npmjs.com/package/react-table
-      */}
+      {
+        useTable
+      }
     </div>
   );
 };
