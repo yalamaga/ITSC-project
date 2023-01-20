@@ -55,12 +55,10 @@ export const AssessmentList = () => {
           </thread>
           <tbody>
             <tr>
-              <td>
-                assessment.name
-                assessment.date
-                assessment.points
-                assessment.riskLevel
-              </td>
+              <td>Abby</td>
+              <td>03-01-2019</td>
+              <td>4</td>
+              <td>high</td>
             </tr>
           </tbody>
         </table>
