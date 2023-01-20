@@ -44,6 +44,26 @@ export const AssessmentList = () => {
   return (
     <div>
       {
+        <table>
+          <thread>
+            <tr>
+              <th>Cat Name</th>
+              <th>Cat Date of Birth</th>
+              <th>Assessment score</th>
+              <th>Risk Level</th>
+            </tr>
+          </thread>
+          <tbody>
+            <tr>
+              <td>
+                assessment.name
+                assessment.date
+                assessment.points
+                assessment.riskLevel
+              </td>
+            </tr>
+          </tbody>
+        </table>
       }
     </div>
   );
