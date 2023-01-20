@@ -16,7 +16,7 @@ exports.submit = async (assessment) => {
 exports.getList = async (assessment) => {
   // use the sequelize model Assessments from packages/api/src/database/models to fetch
   // the assessment data from the PostgreSQL database
-  const assessments = [ Assessment.findAll({ assessment }) ];
+  const assessments = await Assessment.findAll({ assessment });
 
   return assessments;
 };
