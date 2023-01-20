@@ -44,7 +44,6 @@ export const AssessmentList = () => {
   return (
     <div>
       {
-        useTable
       }
     </div>
   );
