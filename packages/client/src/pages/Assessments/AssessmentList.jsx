@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useTable } from 'react-table';
 import { AssessmentService } from '../../services/AssessmentService';
-
 export const AssessmentList = () => {
   const [ assessments, setAssessments ] = useState([]);
 
   // fetch all assessments using the AssessmentService.getList function from OCAT/client/services/AssessmentService.js
   useEffect(() => {
     const fetchAssessments = async () => {
-      setAssessments(await AssessmentService.getList());
+      setAssessments(await AssessmentService.getList(`/client/services/AssessmentService.js`));
     };
     fetchAssessments();
   }, []);
