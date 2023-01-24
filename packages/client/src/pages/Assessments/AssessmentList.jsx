@@ -19,6 +19,18 @@ export const AssessmentList = () => {
         accessor: `catDateOfBirth`,
       },
       {
+        Header: `Instrument Type`,
+        accessor: `instrumentType`,
+      },
+      {
+        Header: `Date created`,
+        accessor: `createdAt`,
+      },
+      {
+        Header: `Date Updated`,
+        accessor: `updatedAt`,
+      },
+      {
         Header: `Score`,
         accessor: `score`,
       },
