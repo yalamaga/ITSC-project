@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useMemo, useSortBy, useTable } from 'react-table';
+import React, { useEffect, useMemo, useState } from 'react';
+import { useSortBy, useTable } from 'react-table';
 import { AssessmentService } from '../../services/AssessmentService';
 export const AssessmentList = () => {
   const [ assessments, setAssessments ] = useState([]);
@@ -7,31 +7,26 @@ export const AssessmentList = () => {
   const columns = useMemo(
     () => [
       {
-        Header: `Cat Assessment`,
-        columns: [
-          {
-            Header: `ID`,
-            accessor: `id`,
-          },
-          {
-            Header: `Cat Name`,
-            accessor: `catName`,
-          },
-          {
-            Header: `Cat Date of birth`,
-            accessor: `catDateOfBirth`,
-          },
-          {
-            Header: `Score`,
-            accessor: `score`,
-          },
-          {
-            Header: `Risk level`,
-            accessor: `riskLevel`,
-          },
-        ],
+        Header: `ID`,
+        accessor: `id`,
       },
-    ]
+      {
+        Header: `Cat Name`,
+        accessor: `catName`,
+      },
+      {
+        Header: `Cat Date of birth`,
+        accessor: `catDateOfBirth`,
+      },
+      {
+        Header: `Score`,
+        accessor: `score`,
+      },
+      {
+        Header: `Risk level`,
+        accessor: `riskLevel`,
+      },
+    ], []
   );
   useEffect(() => {
     const fetchAssessments = async () => {
@@ -55,15 +50,14 @@ export const AssessmentList = () => {
               {headerGroup.headers.map(column =>
                 <th
                   {...column.getHeaderProps(column.getSortByToggleProps())}
+                  style={{
+                    background: `white`,
+                    border: `solid black`,
+                    color: `black`,
+                    fontWeight: `bold`,
+                  }}
                 >
                   {column.render(`Header`)}
-                  <span>
-                    {column.isSorted ?
-                      column.isSortedDesc ?
-                        `🔽` :
-                        `🔼` :
-                      ``}
-                  </span>
                 </th>)}
             </tr>)}
         </thead>
