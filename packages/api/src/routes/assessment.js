@@ -32,7 +32,7 @@ assessmentRouter.post(
 );
 
 assessmentRouter.get(
-  `/`,
+  `/list`,
 
   async (req, res, next) => {
     try {
@@ -41,18 +41,15 @@ assessmentRouter.get(
       const { assessments } = req.body;
       // eslint-disable-next-line no-console
       console.log(assessments);
-      const value = await AssessmentService.getList(assessments);
-      // eslint-disable-next-line no-console
-      console.log(value);
+      const value = await AssessmentService.getList();
       ResponseHandler(
         res,
         `Fetched assessments`,
-        { assessments },
+        value,
       );
     } catch (err) {
       next(err);
     }
   },
 );
-
 module.exports = { assessmentRouter };
