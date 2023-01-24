@@ -41,11 +41,11 @@ assessmentRouter.get(
       const { assessments } = req.body;
       // eslint-disable-next-line no-console
       console.log(assessments);
-      const value = await AssessmentService.getList();
+      const data = await AssessmentService.getList();
       ResponseHandler(
         res,
         `Fetched assessments`,
-        value,
+        data,
       );
     } catch (err) {
       next(err);
