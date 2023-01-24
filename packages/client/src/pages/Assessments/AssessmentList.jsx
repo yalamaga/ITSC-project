@@ -81,6 +81,12 @@ export const AssessmentList = () => {
                 {row.cells.map(cell =>
                   <td
                     {...cell.getCellProps()}
+                    style={{
+                      background: `white`,
+                      border: `solid black`,
+                      color: `black`,
+                      fontWeight: `bold`,
+                    }}
                   >
                     {cell.render(`Cell`)}
                   </td>)}
