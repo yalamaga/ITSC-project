@@ -12,7 +12,6 @@ exports.submit = async (assessment) => {
   });
 };
 
-// eslint-disable-next-line require-await
 exports.getList = async () => {
   // use the sequelize model Assessments from packages/api/src/database/models to fetch
   // the assessment data from the PostgreSQL database
