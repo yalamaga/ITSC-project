@@ -119,7 +119,8 @@ export const NewAssessment = () => {
     </Form.Group>
     {errors.q5 && <p>please select the option below.</p>}
     <Form.Label>Risk Level: low[0-1], Medium[2-3], high[4-5]</Form.Label>
-    <Form.Range />
-    <Button variant="success" type="submit">Submit</Button>
+    <Form.Group>
+      <Button variant="success" type="submit">Submit</Button>
+    </Form.Group>
   </Form>;
 };
